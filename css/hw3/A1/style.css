@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0; 
+}
+
+html, body{
+    width: 100%;
+    height: 100%;  
+    background:  
+    radial-gradient(circle at left top, #963978, transparent 60%), 
+    radial-gradient(circle at right bottom, #963978, transparent 60%),
+    linear-gradient(to right, #460632, #090413);
+}
+
+main{  
+    width: 100%;
+    height: 100%;   
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header{ 
+    display: flex;
+    justify-content: space-between;
+    padding: 1px;
+    color: white;
+    margin-bottom: 10px;
+}
+.cards{
+    display: flex;
+    flex-direction: column; 
+    gap: 40px;
+}
+.cardrow1{
+    display: flex; 
+    justify-content: space-between; 
+    gap: 30px;
+}
+.cardrow2{
+    display: flex; 
+    justify-content: space-between; 
+    gap: 30px;
+}
+.card {  
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 225px;
+    height: 320px;
+    border-radius: 10px;
+    background-color: #594075; 
+}   
+.card button {
+    width: 180px;
+    height: 35px; 
+    color: white;
+    border-radius: 12px;
+    border: 2px solid #b655d9;
+    background-color: transparent;
+    overflow: hidden; 
+    padding: 4px;
+}
+.card img {
+    width: 180px;
+    height: 180px;
+    border-radius: 10px;
+    border: 2px solid #d2c3d7;
+    margin-top: 10px; 
+}
+.cardinfo{
+    width: 180px; 
+    display: flex; 
+    justify-content: space-between;
+    color: white;
+    margin-bottom: 15px;
+} 
+.likes{
+    width: 40px;
+    display: flex;
+    gap: 4px;
+}
+.likes i { 
+    font-size: 10px;
+}

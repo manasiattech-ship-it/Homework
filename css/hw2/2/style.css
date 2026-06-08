@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%; 
+
+}
+main{ 
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+header {
+    text-align: center;
+    padding: 30px;
+    font-size: 30px;
+}
+
+header h1 {
+    
+    font-weight: 100;
+}
+header hr{
+    width: 30%;
+    margin: auto;
+    background-color: #eb5814;
+    margin-top: 10px;
+    border: none;
+    height: 2px;
+} 
+ 
+section{       
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;
+    align-items: center;
+}
+
+.cards{   
+
+    gap:25px;
+    display: flex;
+}
+.card{
+    width: 250px;
+    height: 375px;
+    background-color: #161111;
+    border-radius: 20px;
+    border: 1px solid #eb5814;
+    overflow: hidden;
+}
+.card img{
+    padding: 20px;
+    background-size: contain;
+    width: 100%;
+    height: 70%;
+}
+
+.carditems{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.carditems hr{
+    width: 30px; 
+    background-color: #eb5814; 
+    border: none;
+    height: 1px;
+    margin-top: 5px;
+    
+}
+.carditems h3{
+    color:  #fff9f6 ; 
+}
+.carditems h5{
+    color:  #5B5653 ;
+    
+}
+.special{ 
+    width: calc(272px * 4);
+    height: 300px;
+    background-color: #161111;
+    border-radius: 20px; 
+    margin-top: 15px;
+    display: flex; 
+
+}
+ .special img{
+    padding: 20px;
+    background-size: contain;
+    width: 30%;
+    height: 100%;
+
+ }
+ .specialwriteup{
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    padding: 50px;
+    gap: 15px;
+    width: 500px;
+ }
+ .specialwriteup h5{
+    color: #eb5814;
+ }
+ .specialwriteup h6{
+    color:  #5B5653 ;
+    
+}
+button{
+    color: #eb5814; 
+    width: 150px;
+    height: 32px;
+    border-radius: 20px; 
+    border: 2px solid #eb5814;
+    background-color: #161111; 
+    flex-shrink: 0;
+ }
+footer{
+    height: 60px; 
+}
+footer hr{  
+    background-color: #eb5814; 
+    border: none;
+    height: 2px;
+}
+.footeritems{
+    display: flex; 
+    justify-content: space-between;
+    padding: 20px;
+
+}
+
+.footercenteritems{
+    display: flex;
+    justify-content: space-between;
+    gap:30px
+}

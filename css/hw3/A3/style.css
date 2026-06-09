@@ -1,0 +1,126 @@
+*{
+    padding:0 ;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+@font-face {
+  font-family: 'Shuriken';
+  src: url('./The\ Last\ Shuriken.otf') format('opentype');
+}
+
+main{   
+    height: 100vh;
+    width: 100%;
+    background-color: #2C2631;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;  
+    background-image: url('./back.jpg');
+    background-size: cover;
+    background-repeat: no-repeat; 
+
+}
+
+nav{
+    display: flex;  
+    justify-content: space-between;
+    width: 70%;
+    padding: 20px;
+}
+.navitems{ 
+    display: flex;
+    gap:28px;
+    color: white;
+    font-weight: bold;
+}
+
+.icons button {
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    border-radius: 10px;
+    color: #2C2631;
+    font-size: 15px;
+
+} 
+
+.centertext{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 20px;
+    color: white; 
+    font-family: 'Shuriken', sans-serif;
+    font-size: 60px;   
+    letter-spacing: 3px;
+} 
+.footer{
+    width: 0%;  
+    background-color: #2C2631;
+    color: white;  
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.vision-section {
+    width: 70%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #e0e0e0;
+    margin-top: auto;  
+    padding-bottom: 60px;
+}
+
+.vision-title {
+    font-family: 'Shuriken', sans-serif;
+    font-size: 36px;
+    letter-spacing: 2px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* Custom CSS Diamond Divider line */
+.diamond-divider {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.diamond-divider .line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(212,163,115,0) 0%, rgba(212,163,115,1) 50%, rgba(212,163,115,0) 100%);
+}
+
+.diamond-divider .diamond {
+    width: 12px;
+    height: 12px;
+    background-color: #d4a373;
+    transform: rotate(45deg);
+    margin: 0 15px;
+    border: 1px solid #fff;
+}
+
+.vision-content {
+    display: flex;
+    gap: 50px;
+    width: 100%;
+}
+
+.vision-content .column {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #b0aeb3;
+    text-align: justify;
+}

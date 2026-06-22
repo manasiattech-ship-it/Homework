@@ -1,0 +1,84 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    display: block; 
+    color: white;
+}
+main{  
+    
+    height: 100%;
+    width: 100%;
+    display: grid; 
+    grid-template-columns: 22% 20% 7% 27% 22%;
+    grid-template-rows: 29% 24% 7% 18% 18%;
+    grid-template-areas: 
+    "left-top top-center1 top-center1 top-center2 right-top"
+    "left-top center center center right-top"
+    "left-bottom center center center right-top"
+    "left-bottom center center center right-bottom"
+    "left-bottom bottom-center1 bottom-center2 bottom-center2 right-bottom" ;
+    gap: 10px; 
+    
+} 
+.left-top{
+    background-color: blueviolet;
+    grid-area: left-top;
+    border-radius: 5%;
+}
+.left-bottom{
+    background-color: royalblue;
+    grid-area: left-bottom;
+    border-radius: 5%;
+
+}
+.top-center1{
+    background-color: rgb(37, 228, 129);
+    grid-area: top-center1;
+    border-radius: 5%;
+
+}
+.top-center2{
+    background-color: rgb(13, 38, 163);
+    grid-area: top-center2;
+    border-radius: 5%;
+
+}
+
+.center{ 
+    background-color: rgb(171, 251, 23);
+    grid-area: center;
+    border-radius: 5%;
+
+}
+.bottom-center1{
+    background-color: rgb(212, 110, 8);
+    grid-area: bottom-center1;
+    border-radius: 5%;
+
+}
+
+.bottom-center2{
+    background-color: rgb(8, 124, 212);
+    grid-area: bottom-center2;
+    border-radius: 5%;
+
+}
+.right-top{
+    background-color: rgb(77, 80, 89);
+    grid-area: right-top;
+    border-radius: 5%;
+
+}
+.right-bottom{
+    background-color: rgb(234, 45, 215);
+    grid-area: right-bottom;
+    border-radius: 5%;
+
+}

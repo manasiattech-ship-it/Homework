@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <nav>
+            <button class="toggle">Dark</button> 
+        </nav>
+         
+        <div class="task-add">
+            <input type="text" placeholder="Add a task" />
+            <select name="category" id="category">
+                <option value="Kitchen">Kitchen</option>
+                <option value="Hall">Hall</option>
+                <option value="Dining">Dining</option>
+                <option value="Games">Games</option>
+            </select>
+                <button id="add">Add</button> 
+                <h2>List</h2> 
+
+                <h1>Tasks</h1> 
+
+        </div>
+
+        <div class="task-list"> 
+            <!-- <div class="li" data-cat="Kitchen" data-status="Not Done!">
+                <h3>ewer</h3>
+                <h5>Kitchen</h5>
+                <div class="btns">
+                    <button class="complete">Complete</button>
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </div>
+            </div> -->
+
+        </div>
+
+    </main>
+        <div class="edittask"> 
+            <div class="task">
+            <h4>task</h4>
+            <input type="text" placeholder="Task" class="edittaskinput"></input>
+            <h4>category</h4>
+            <input type="text" placeholder="Category" class="editcat" disabled></input>
+            <button class="editSubmit"> Submit</button>
+            </div>
+
+        </div>
+    <script src="script.js"></script>
+    
+</body>
+</html>

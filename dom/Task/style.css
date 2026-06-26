@@ -12,7 +12,7 @@ html, body {
 }
 
 main {
-    height: 60%;
+    height: 80%;
     width: 60%; 
     background-color: rgba(57, 57, 50, 0.811);
     border-radius: 20px;
@@ -78,7 +78,7 @@ main {
     gap: 10px;
     margin-bottom: 10px;
 }
-task-list h3{
+task-list h3{ 
     color: orangered;
 }
 
@@ -90,9 +90,14 @@ task-list h3{
     padding: 10px 15px;
     border-radius: 10px;
     background-color: bisque;
-    color: #6a6a6a;
+    color: #6a6a6a; 
 }
-
+.li h3 {
+    margin-top: 7px;
+}
+.li h5 {
+    margin-top: 8px;
+}
 .btns button{
     width: 64px;
     height: 32px;
@@ -131,8 +136,7 @@ task-list h3{
     background-color: rgba(244, 222, 208, 0.81)
 } 
 
-.edittask { 
-     
+.edittask {  
     height: 100%;
     width: 100%;
     justify-content: center;
@@ -140,11 +144,10 @@ task-list h3{
     position: absolute;  
     top:0;
     display: none;
-    background-color: rgb(0, 0, 0);
-
+    background-color: rgb(0, 0, 0); 
 } 
 .task h4 {
-    justify-content: flex-start;
+    justify-content: flex-start; 
 }
 
 .task { 
@@ -154,6 +157,7 @@ task-list h3{
     flex-direction: column;
     justify-content: center;
     align-items: center;   
+     
 }
 
 .task input {
@@ -174,5 +178,32 @@ task-list h3{
     background-color: rgba(215, 98, 8, 0.95);
     color: white;
     cursor: pointer;
+
+}
+
+.box {
+    border: 2px solid black;
+    padding: 20px;
+    margin: 20px;
+}
+
+.pipeline {
+    width: 400px;
+    margin: 30px auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.step { 
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.arrow {
+    font-size: 30px;
+    color: white;
 
 }

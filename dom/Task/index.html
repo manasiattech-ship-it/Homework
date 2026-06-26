@@ -21,8 +21,7 @@
                 <option value="Games">Games</option>
             </select>
                 <button id="add">Add</button> 
-                <h2>List</h2> 
-
+                <h2>List</h2>  
                 <h1>Tasks</h1> 
 
         </div>
@@ -41,6 +40,9 @@
         </div>
 
     </main>
+
+    
+    //last two questions
         <div class="edittask"> 
             <div class="task">
             <h4>task</h4>
@@ -51,7 +53,43 @@
             </div>
 
         </div>
+    <div id="grandparent" class="box">
+    Grandparent
+    <div id="parent" class="box">
+        Parent
+        <button id="child">Child Button</button>
+    </div>
+
+    <section class="pipeline">
+    <h2>Browser Rendering Pipeline</h2>
+
+    <div class="step">HTML</div>
+    <div class="arrow">↓</div>
+
+    <div class="step">Parsing</div>
+    <div class="arrow">↓</div>
+
+    <div class="step">Tokenization</div>
+    <div class="arrow">↓</div>
+
+    <div class="step">DOM Tree</div>
+
+    <div class="arrow">↓</div>
+
+    <div class="step">CSS</div>
+    <div class="arrow">↓</div>
+
+    <div class="step">CSSOM Tree</div>
+
+    <div class="arrow">↓</div>
+
+    <div class="step">DOM Tree + CSSOM Tree</div>
+    <div class="arrow">↓</div>
+
+    <div class="step">Render Tree</div>
+</section>
     <script src="script.js"></script>
-    
+
+</div>
 </body>
 </html>

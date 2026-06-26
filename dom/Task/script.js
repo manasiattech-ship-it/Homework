@@ -27,9 +27,9 @@ const ui = () => {
                 <div class="btns"> 
 					  ${
 							!task.isCompleted
-								? `<button class="complete" onclick="completeTask(${task.id})">Complete</button>
-								<button class="edit" onClick="updateTask(${task.id})">Edit</button>
-								<button class="delete" onClick="deleteTask(${index})">Delete</button>`
+								? `<button class="complete" data-id="${task.id}">Complete</button>
+                            <button class="edit" data-id="${task.id}">Edit</button>
+                            <button class="delete" data-index="${index}">Delete</button>`
 								: "✅Done!"
 						} 
                 </div>
@@ -37,9 +37,24 @@ const ui = () => {
 	})
 }
 
+taksList.addEventListener("click", (e) => {
+	const target = e.target
+
+	if (target.classList.contains("complete")) {
+		completeTask(Number(target.dataset.id))
+	}
+
+	if (target.classList.contains("edit")) {
+		updateTask(Number(target.dataset.id))
+	}
+
+	if (target.classList.contains("delete")) {
+		deleteTask(Number(target.dataset.index))
+	}
+})
+
 const updateTask = (id) => {
 	editId = id
-	console.log(id)
 	editTask.style.display = "flex"
 	let task = tasksArr.find((task) => task.id === id)
 	editinputtask.value = task.task
@@ -170,3 +185,58 @@ const changeTheme = () => {
 	themeBtn.textContent = isDark ? "Light" : "Dark"
 }
 console.log(main.contains(taksList))
+
+// Event propogation demo --
+// bubbling (default) -- event travels from the clicked element up (Child to parent to grandparent)
+// in Capturing event travels from the outermost element down (grandparent to parent to child)
+
+const grandparent = document.querySelector("#grandparent")
+const parent = document.querySelector("#parent")
+const child = document.querySelector("#child")
+
+// Event Bubbling (default)
+grandparent.addEventListener("click", () => {
+	console.log("Grandparent")
+})
+
+parent.addEventListener("click", () => {
+	console.log("Parent")
+})
+
+child.addEventListener("click", () => {
+	console.log("Child")
+})
+
+grandparent.addEventListener(
+	"click",
+	() => {
+		console.log("Grandparent")
+	},
+	true,
+)
+
+parent.addEventListener(
+	"click",
+	() => {
+		console.log("Parent")
+	},
+	true,
+)
+
+child.addEventListener(
+	"click",
+	() => {
+		console.log("Child")
+	},
+	true,
+)
+
+// Html - downloads html File
+// parsing - reads the html line by line
+// tokenization - breaks html into tokens (tasks, attributes, text)
+// DOM Tree - Creates the document model
+
+// CSS - downloads and reads CSS
+// CSSOM tree - creates css object model
+// DOM tree + CSSOM Tree -  combines structure and style
+// Render Tree - browser reads and drwas

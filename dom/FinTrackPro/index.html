@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        FinPro
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+
+</head>
+<body> 
+    <main>
+        <nav>
+            <div class="logo">LOGO</div>
+            <div class="navcenter">
+                <link rel="stylesheet" href="" id="navlink1"> Link1 </link>
+                <link rel="stylesheet" href="" id="navlink2"/> Link2 </link>
+            </div>
+            <div class="navbuttons">
+                <button class="createbtn">Add </button>
+            </div>
+            <div class="settings"><i class="ri-settings-3-line"></i></div>
+        </nav>
+        <div class="cards">
+            <div class="fourcards"> 
+                <div class="card income">
+                    <h4 >Total income</h4>
+                    <h1 id="income">$1000</h1> 
+                </div>
+                
+                <div class="card expense">
+                    <h4>Total Expense</h4> 
+                    <h1 id="expense">$1000</h1> 
+                </div>
+                <div class="card balance">
+                    <h4>Current Balance</h4>
+                    <h1 id="balance">$300</h1>
+                </div>
+                <div class="card transactions">
+                    <h4>Total Transactions</h4>
+                    <h1 id="transactions"> 10</h1>
+                </div>
+            </div>
+            <section>
+                <div class="chart"> 
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="transactiontablediv">
+                    <table class="transactiontable">
+                        <thead>
+                        <tr>    
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>deded </th>
+                        </tr>
+                        </thead>
+                        <tbody class="transactiontablebody">
+ 
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+             <div class="modal">
+                <form class="transactionInput">
+            
+                    <input
+                    type="date"
+                    id="date"
+                    name="date"
+                    placeholder="Date"
+                    required 
+                    /> 
+ 
+                    <select id="type" name="type" required>
+                    <option value="Income">Income</option>
+                    <option value="Expense" selected>Expense</option> 
+                    </select>
+                    <input
+                    type="text"
+                    id="description"
+                    name="description"
+                    placeholder="Description"
+                    required 
+                    />   
+                    <select id="category" name="category" required>
+                    <option value="Food & Dining" selected>Food & Dining</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Recharge & Bills">Recharge & Bills</option>
+                    <option value="Petrol & Auto">Petrol & Auto</option>
+                    <option value="Utilities">Utilities</option>
+                    <option value="Salary">Salary</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Other">Other</option>
+                    </select>
+                    <input
+                    type="number"
+                    id="amount"
+                    name="amount" 
+                    placeholder="Amount"
+                    step="0.01"
+                    required
+                    />  
+        
+                    <button action="submit" class="savebtn">Save</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

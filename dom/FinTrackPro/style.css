@@ -1,0 +1,267 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+@font-face {
+    font-family: googlefont;
+    src: url(./Inter-VariableFont_opsz\,wght.ttf);
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    font-family: googlefont;
+}
+
+main{
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+nav{
+    width: 100%;
+    height: 6vh; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    color: white;
+    background-color: rgb(185, 110, 255);
+    padding: 20px; 
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+.createbtn{
+    width: 8vw;
+    height: 4vh;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: large;
+    background-color: rgb(72, 116, 185);
+}
+.cards{
+    width: 100%;
+    height: calc(100% - 6vh); 
+    display: flex;
+    flex-direction: column;
+    margin-top: 6vh;
+}
+.fourcards{ 
+    width: 100%;
+    height: 15vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+    background-color: pink;
+    font-size: x-large;
+}
+.card{ 
+    background-color: rgb(92, 92, 179);
+    color: antiquewhite;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center; 
+}
+.income{
+    background-color: rgb(31, 231, 164);
+    color: rgb(22, 66, 198);
+
+}
+.expense{  
+    background-color: #C40233;
+    color: rgb(240, 244, 255);
+}
+
+.balance{
+    background-color: indigo;
+    color: rgb(216, 226, 255);
+
+}
+.transactions{
+    background-color: rgb(15, 129, 216);
+    color: rgb(240, 244, 255);
+
+}
+section{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.chart{
+    width: 35%;
+    height: 45vh; 
+    padding: 10px;
+    border: 1px solid black;
+    display: flex; 
+    align-items: center;
+    border-radius: 8px;
+
+}
+.transactiontablediv{ 
+    width: 63%;
+    height: 45vh; 
+    padding: 10px; 
+    border: 1px solid black;  
+    overflow: auto;  
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}  
+
+.transactiontable {
+  width: 100%;
+  border-collapse: collapse; /* Merges individual cell borders into single lines */
+ 
+  font-size: 0.9rem;
+  background-color: #ffffff;
+}
+
+.transactiontable th,
+.transactiontable td {
+    padding: 12px;
+    text-align: left;
+}
+/* //header stays */
+.transactiontable thead th {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1;
+}
+.modal{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.669); 
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.transactionInput{ 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    width: 70%;
+    height: 50%;
+    gap: 15px;
+    background-color: white; 
+}
+.transactionInput > input  {
+    width: 70%;
+    height: 30px;
+    border-radius: 2px;
+    border: 1px solid rgb(129, 129, 129);
+    padding: 10px;
+    color: rgb(28, 22, 22); 
+}
+select{
+    
+    width: 70%;
+    height: 30px;
+    border-radius: 2px;
+    border: 1px solid rgb(129, 129, 129);
+    padding: 1px;
+    color: rgb(28, 22, 22); 
+}
+.savebtn{ 
+    width: 8vw;
+    height: 4vh;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: large;
+    background-color: rgb(72, 116, 185);
+}
+.deleteTransaction{ 
+    width: 6vw;
+    height: 2vh;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: small;
+    background-color: rgb(247, 24, 24);
+    }
+    .settings{
+        font-size: x-large;
+    }
+@media(max-width: 900px){
+    nav{
+        height: 5vh;
+    }
+    .cards{  
+        margin-top:5vh; 
+    }
+     
+    .fourcards{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        height: 28vh;
+        padding: none;  
+        gap: 6px;
+
+    }
+    .fourcards > div{
+        height: 100%;
+        min-height: 0; 
+    }
+    
+    .chart{
+        width: 100%; 
+    }
+
+
+}
+
+
+@media(max-width: 600px){ 
+    nav{
+        height: 5vh;
+    } 
+    .cards{  
+        margin-top:5vh;    
+    }
+    .fourcards{
+        display: grid;
+        grid-template-columns: 1fr; 
+        grid-template-rows: repeat(4, 1fr); 
+        height: 25vh;
+        padding: none;  
+        gap: 6px;
+        font-size: small;
+    }
+    .fourcards > div{
+        height: 100%; 
+        min-height: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+    }
+.chart{
+    width: 100%; 
+}
+section{
+    flex-direction: column;
+} 
+.chart{
+    width: 100%;
+    
+}
+
+.transactiontablediv{ 
+  width: 100%;
+     
+}  
+ 
+}

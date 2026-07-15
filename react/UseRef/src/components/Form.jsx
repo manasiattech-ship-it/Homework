@@ -3,6 +3,9 @@ import React, { useRef, useState } from 'react'
 const Form = () => {
     const [formData, setFormData] = useState({});
     let inpRef = useRef({})
+    const [products, setProducts] = useState({})
+    console.log("render") 
+    console.log(products)  
 
     let handleSub = (e) => {
         e.preventDefault()
@@ -11,7 +14,12 @@ const Form = () => {
           console.log(inpRef.current.image.value)
           console.log(inpRef.current.category.value)
           console.log(inpRef.current.price.value)
-
+            let obj = {pName: inpRef.current.prodName.value,
+                        cat: inpRef.current.category.value,
+                        img: inpRef.current.image.value,
+                        price: inpRef.current.price.value
+            }
+          setProducts(obj)
     }
   return (
     <div className='w-80 h-screen'>
@@ -30,6 +38,12 @@ const Form = () => {
                 <button className='p-2 bg-blue-600 text-white rounded'>Create</button>
             </form>
       
+        <div>
+            <h1>Name = {products.pName}</h1>
+            <h1>category = {products.cat}</h1>
+            <h1>image = {products.img}</h1>
+            <h1>price = {products.price}</h1>
+        </div>
     </div>
   )
 }

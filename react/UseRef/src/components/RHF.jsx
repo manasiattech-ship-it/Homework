@@ -4,9 +4,15 @@ import { useForm } from 'react-hook-form'
 const RHF = () => {
     let {register, handleSubmit, reset, formState: {errors}}= useForm();
  
+    const formSubmit = (data) => {
+
+        console.log("formsubmit")
+        console.log(data)
+    reset()
+}
   return (
 <div className='w-80 h-screen'> 
-        <form onSubmit={handleSubmit((data) => {console.log(data)})} className='flex flex-col gap-4 p-6 rounded  bg-white' >
+        <form onSubmit={handleSubmit(formSubmit)} className='flex flex-col gap-4 p-6 rounded  bg-white' >
             <input {...register("prodname")} type="text" className="p-2 border-gray-400-rounded"  name="prodname" placeholder='product name'></input>
             <input  {...register("price")} type="text"  className="p-2 border-gray-400-rounded"  placeholder='Price'></input>
             <span  {...register("category")} className="p-2 border-gray-400-rounded" >Select Category</span>

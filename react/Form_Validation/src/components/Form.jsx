@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 import {useForm} from "react-hook-form"
 import { useEffect } from "react"
+import {nanoid} from 'nanoid'
 
-
-const Form = ({setUsers, setToggle, editUser, setEditUser}) => {
+const Form = ({setUsers, setToggle, users, updatedData, setUpdatedData}) => {
 
 
 
@@ -13,33 +13,36 @@ const Form = ({setUsers, setToggle, editUser, setEditUser}) => {
 		reset,
 		formState: {errors},
 	} = useForm({mode:"onChange",
-		defaultValues:{
-			name: "",
-			email: "",
-			mobile: "",
-			image:""
-		}
-	})
-
-		useEffect(() => {
-		if(editUser){
-			reset(editUser)
-		}
-	},[editUser, reset])
-
-
+		defaultValues: 
+		updatedData 
+	}) 
 
 	let formSubmit = (data) => {
+		console.log("data" , data)
 
-		if(editUser){
-			setUsers((prev) => 
-				prev.map((user) => 
-					user.email === editUser.email ? data: user));
+		if(updatedData){ 
+			console.log("inside form ->>")
 
-			setEditUser(null)
+			let old = users.find((item, index) => item.id === updatedData.id)
+			console.log("inside form ->>", old)
+
+			if(old){
+			console.log("inside old ->>")
+
+				setUsers((prev) => {
+					const updatedUsers = prev.map((val) => {
+						return val.id === updatedData.id ? {...data} : val
+					})
+					localStorage.setItem("users", JSON.stringify(updatedUsers))
+					setUpdatedData(null)
+					return updatedUsers
+				})
+			}  
 		}
 		else{
-			setUsers(prev => [...prev, data])
+			let arr = [...users, {...data, id: nanoid()}];
+			setUsers(arr)
+			localStorage.setItem("users", JSON.stringify(arr))
 		}
 		reset()
 		setToggle(prev => !prev)
@@ -99,8 +102,7 @@ const Form = ({setUsers, setToggle, editUser, setEditUser}) => {
 				></input>
 				{errors.image && <p className="text-red-500">{errors.image.message}</p>}
 
-				<button className="p-2 bg-blue-700 text-white rounded cursor-pointer">
-					{editUser ? "Edit User" : "Add User"}
+				<button className="p-2 bg-blue-700 text-white rounded cursor-pointer"> {updatedData?"Edit User": "Add User"}
 				</button>
 			</form>
 		</div>

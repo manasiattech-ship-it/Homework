@@ -1,12 +1,25 @@
 import React from 'react'
 
-const UserCard = ({user, setUsers, users, setToggle, setEditUser}) => {
+const UserCard = ({user, setUsers, users, setToggle, setEditUser, setUpdatedData}) => {
     console.log(users)
     const handleEdit = () => {
-        setEditUser(user) 
+        setUpdatedData(user) 
         setToggle((prev)=>!prev)
     }
+    let obj = JSON.stringify({"name":"sdg","age": "22"})
+    localStorage.setItem("obj",obj)
 
+    console.log(JSON.parse(localStorage.getItem("obj")));
+    const handleDelete = () => {
+        console.log(user.name);
+        console.log(users)
+        
+        let newusers = users.filter((item) => user.name !== item.name)
+        console.log(newusers)
+        
+        setUsers(newusers)
+        localStorage.setItem("users", JSON.stringify(newusers))
+    }
 
   return (
     <div className='p-4 border border-red rounded flex flex-col gap-2'>
@@ -20,7 +33,7 @@ const UserCard = ({user, setUsers, users, setToggle, setEditUser}) => {
         </div>
         <div className='flex justify-between'>
             <button onClick={handleEdit} className='bg-yellow-700 text-white p-2 roubded'>Update</button>
-            <button onClick={ () => setUsers(users?.filter((u) => u.name!==user.name))} className='bg-red-700 text-white p-2 roubded'>Delete</button>
+            <button onClick={handleDelete} className='bg-red-700 text-white p-2 roubded'>Delete</button>
         </div>
     </div>
   )

@@ -1,4 +1,4 @@
-import React, { lazy } from 'react'
+import React, { lazy, Suspense } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import MainLayout from '../layouts/MainLayout'
 let About = lazy(() => import('../pages/About'))  
@@ -20,7 +20,11 @@ const AppRoutes = () => {
 					},
 					{
 						path: "/contact",
-						element: <Contact />,
+						element: (
+							<Suspense fallback={<h1>Loadingg about to coverup page loadtime...</h1>}>
+								<Contact />
+							</Suspense>
+						),
 					},
 				],
 			},
